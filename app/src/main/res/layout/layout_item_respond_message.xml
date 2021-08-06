@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/cardAvatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="5dp"
+        app:cardCornerRadius="50dp">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/lisa" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:text="Phung Kim Hanh"
+        android:textStyle="bold"
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cardAvatar"
+        android:layout_alignParentTop="true"
+        />
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cardAvatar"
+        android:layout_below="@+id/tvName"
+        android:background="@drawable/custom_other_message"
+       />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:id="@+id/progressBarLoading"
+        android:layout_toRightOf="@+id/cardAvatar"
+        android:layout_below="@+id/tvName"
+       style="@style/SpinKitView.ThreeBounce"
+        />
+
+
+</RelativeLayout>

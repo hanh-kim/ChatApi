@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.ChatActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#09AAF8"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        app:titleTextColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/avatar"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                app:cardCornerRadius="50dp">
+
+                <ImageView
+                    android:id="@+id/imgAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/lisa" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/icInfo"
+                android:layout_toRightOf="@+id/avatar"
+                android:text="Phung Kim Hanh"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/icDotActive"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/avatar"
+                android:src="@drawable/ic_dot_active" />
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvName"
+                android:layout_toLeftOf="@+id/icInfo"
+                android:layout_toRightOf="@+id/icDotActive"
+                android:text="Đang hoạt động"
+                android:textColor="#17FF00" />
+
+
+            <ImageView
+                android:id="@+id/icInfo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_baseline_info_24" />
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="1dp"
+        android:background="#EAE9E9"
+        android:paddingBottom="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#F8F7F7"
+        android:padding="10dp">
+
+
+        <EditText
+            android:id="@+id/edtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:layout_toLeftOf="@+id/icSend"
+            android:background="@drawable/custom_text_box"
+            android:elevation="6dp"
+            android:hint="Text your message here..."
+            tools:targetApi="lollipop" />
+
+        <ImageView
+            android:id="@+id/icSend"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/ic_baseline_send_24" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
